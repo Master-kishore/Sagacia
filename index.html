@@ -61,7 +61,9 @@ width:100%;
 }
 #home{
 text-align:center;
+position:relative;
 }
+
 .jayalogo{
 height:100px;
 width:100px;
@@ -86,6 +88,7 @@ height:100%;
 display:inline-block;
 vertical-align:middle;
 }
+
 .content span{
 font-size:90px;
 font-weight:bold;
@@ -105,7 +108,7 @@ padding:14px 28px;
 border-radius:25px;
 color:#fff;
 font-weight:600;
-margin-top:40px;
+margin:40px 0 20px 0;
 display:inline-block;
 text-decoration:none;
 background:linear-gradient(65deg, #ff527d 0, #ff85a3 100%);
@@ -121,10 +124,11 @@ display:inline-block;
 margin:20px;
 vertical-align:middle;
 }
-.header ul li a:hover{
+.header ul li a:hover,#events ul li:hover{
 transition:.4s;
 background:#fff2f5;
 }
+
 .navsPreview img{
 width:100%;
 height:100%;
@@ -139,9 +143,25 @@ flex-wrap:wrap;
 justify-content:space-evenly;
 background:#fff2f5;
 }
+#events p{
+width:300px;
+padding:10px;
+position:fixed;
+top:50%;
+left:50%;
+z-index:2;
+transform:translate(-50%,50%);
+background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 16.5px );
+-webkit-backdrop-filter: blur( 16.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
 
 #events ul{
-width:200px;
+width:230px;
+position:relative;
 background:#fff;
 display:inline-block;
 vertical-align:top;
@@ -156,19 +176,26 @@ transition:.3s;
 box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 #events ul li{
+cursor:pointer;
 text-align:left;
 margin:10px;
-padding-left:30px;
+padding:0 7px 0 30px;
 position:relative;
 font-size:18px;
 box-sizing:border-box;
 }
+
 #events ul li:first-child::before{
 background:unset;
+cursor:unset;
 }
 #events ul li:first-child{
 color:#fe517c;
 font-size:20px;
+}
+#events ul li:first-child:hover{
+background:#fff;
+cursor:auto;
 }
 #events ul li::before{
 content:'';
@@ -181,15 +208,28 @@ height:20px;
 background:url("arrow.png");
 background-size:cover;
 }
-#events p{
+#events span{
+display:block;
 margin-top:50px;
 color:#fe517c;
 width:95%;
 font-size:20px;
 font-weight:bold;
 }
-
-
+.conts{
+display:none;
+}
+.active .conts{
+animation:opacity .3s ease-out;
+display:inline-block;
+}
+@keyframes opacity{
+0%{opacity:0;}
+100%{opacity:1;}
+}
+.togs p{
+display:none;
+}
 #contact{
 margin-top:80px;
 text-align:center;
@@ -235,12 +275,15 @@ width:97%;
 }
 
 @media (max-width:768px) {
+#events ul{
+margin-top:30px;
+}
 .content span{
 font-size:65px;
 }
 .logo{
 width:200px;
-height:85px;
+heigth:85px;
 }
 .header ul{
 right:7px;
@@ -266,9 +309,7 @@ margin:auto;
 top:80%;
 width:100%;
 }
-#events ul{
-margin-top:30px;
-}
+
 .map {
   width: 280px;
   height: 195px;
@@ -281,7 +322,7 @@ margin-top:30px;
 </head>
 <body>
 
-<div class="wrapper">
+<div class="wrapper" id="exist">
 <div class="header">
 	<div class="logo">
 		<img src="images/logo.png" alt="logo">
@@ -303,6 +344,8 @@ margin-top:30px;
 	<span>Sagacia 2K23</span>
 	<p>National Level Technical Symposium.</p>
 	<a href="#">Register Now</a>
+<p>Last Day For Registeration Is 15th April.</p>
+<p>Registeration Fee is ₹ 100.</p>
 </div>
 </div>
 <!--EVENTS-->
@@ -310,20 +353,40 @@ margin-top:30px;
 <h1>Events</h1>
 <ul>
 <li>Technical</li>
-<li>Paper Presentation</li>
-<li>Debugging</li>
-<li>Web Wars</li>
-<li>Quiz</li>
+<li>Paper Presentation
+<p class="conts">1111111111111 111111111111 11111111 11111111111 11111111111 111111111 1111111111 11111111111 1111111111 1111111111 </p>
+</li>
+<li>Debugging
+<p class="conts">2222222222 22222222 222222 2 2 2 2 2 2 2  22222222222222 2  222222222222 2 2222222222 222222222 222222222 2222   22</p>
+</li>
+<li>Web Wars
+<p class="conts">333333333333 333333 333333333 3 3 3 3 3 3 33333333333333333333333 3333333333 33333 3333333333 3333333333 333333333 33</p>
+</li>
 </ul>
 
 <ul>
-<li>Non Technical</li>
-<li>Fandom Quiz</li>
-<li>E - Sport [Pubg]</li>
-<li>Active Popcorn</li>
 <li>Online</li>
+<li>Memes Creation
+<p class="conts">444444 44444444444 444444444444 44444444444 4444444444 444444444444 4 444444444444 4444444444 444444444 4   4444444</p>
+</li>
+<li>Photography
+<p class="conts">5555555555 555555555 5555555555 5555555555 55555 555555 555 5 55555555555 55555555 5 555555555555 5   55 5555555 55</p>
+</li>
 </ul>
-<p>Some Special Events Are Also Waiting For You.</p>
+
+<ul>
+<li>Non - Technical</li>
+<li>Fandom Quiz
+<p class="conts">66666 6666666 6  6666666 6 66666666 666666 666666666 666666666 6666666666 6666666666666666  66666666 6 6 66666666 666666</p>
+</li>
+<li>E - Sport [Pubg]
+<p class="conts">777777777 777777 7 777777777 777777 7    7  7  77777   77777777 7 7 7 77 7 7 77 777777777777777  7 77777777777 7 77 7</p>
+</li>
+<li>Box Cricket
+<p class="conts">888888888888 888888 88  8  8888888 8 8 88 8 88 8 8 88 8 88 8 88 8 88 8 8 88 88888 88 8 8 8 8 88 8 8 8 88 8 8 88 8 88 8 8</p>
+</li>
+</ul>
+<span>Some Special Events Are Also Waiting For You.</span>
 </div>
 
 <div id="contact">
@@ -332,23 +395,39 @@ margin-top:30px;
 </div>
 	<div class="map-content">
 		<span><span>Venue</span> : IT Block</span>
-		<span><span>Address</span> : Jaya Engineering College, CTH road, Prakash nagar, Thiruninravur, Thiruvallur 602024.
+		<span><span>Address</span> :  Jaya Engineering College, CTH road, Prakash nagar, Thiruninravur, Thiruvallur 602024.
 		</span>
-		<span><span>contact</span> : +91</span>
-		<span><span>Email</span> : diqwdmopdkqpk@fekwofk.dowkd</span>
+		<span><span>contact</span> : +91 7397274547 (V.Kishore)</span>
+		<span><span>Email</span> : sagaciasympo@gmail.com</span>
 	</div>
 </div>
 <div class="footer">
 <div class="navs">
 <div class="navsPreview">
-<a href="#"><img src="images/insta.png" alt="insta"></a>
+<a href="https://www.instagram.com/sagacia_2k23/"><img src="images/insta.png" alt="insta"></a>
 </div>
 <div class="navsPreview">
-<a href="#"><img src="images/fb.png" alt="insta"></a>
+<a href="https://www.facebook.com/profile.php?id=100091554859088"><img src="images/fb.png" alt="insta"></a>
 </div>
 </div>
 <p>Copyright © Department Of Information Technology</p>
 </div>
 </div>
+<script>
+let Lists = document.querySelectorAll("#events ul li");
+let conts = document.querySelectorAll(".conts");
+Lists.forEach((List,index)=> {
+List.addEventListener("click", toggles);
+function toggles(){
+for(var i=0; i< conts.length; i++){
+				var child = conts[i];
+child.parentNode.classList.remove("active");
+					}
+this.classList.add("active");
+setTimeout(toggles, 10000);
+}
+});
+
+</script>
 </body>
 </html>
